@@ -1,4 +1,4 @@
-require.paths.unshift('../src');
+require.paths.unshift('../lib');
 var stun = require('stun');
 
 // Load config file.
