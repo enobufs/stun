@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2011 Yutaka Takeda <yt0916 at gmail.com>
+ * MIT Lincesed
+ */
+
 require.paths.unshift('../src');
 var stun = require('stun');
 
