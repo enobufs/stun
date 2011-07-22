@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2011 Yutaka Takeda <yt0916 at gmail.com>
- * MIT Lincesed
+ * MIT Licensed
  */
 
 require.paths.unshift('../lib');

@@ -1,7 +1,7 @@
 # STUN server for Node.js
 
 ## Overview
-STUN (Simple Traversal of UDP through NAT: RFC3489) is a protocol that allows a client node to obtain an external IP address and port number assigned by a NAT the client is behind, and to find out behavioral type of the NAT. It is implemented in JavaScript to run with node.js. I started this work originally to learn node.js and JavaScript, however, I'd like to share the library with everyone with hopes that it could help others and improve the library with a help from others.
+STUN (Simple Traversal of UDP through NAT: RFC3489) is a protocol that allows a client node to obtain an external IP address and port number assigned by a NAT the client is behind. It can also identify behavioral type of the NAT. It is implemented in JavaScript to run with node.js. I started this work originally to learn node.js and JavaScript, however, this library may help other people who are interested in using STUN.
 
 ## System requirement
 * Node.js v0.4 or above
@@ -32,6 +32,9 @@ That is it!
    * UNKNOWN-ATTRIBUTE
    * REFLECTED-FROM
    * XOR-MAPPED-ADDRESS (RFC3489bis)
+
+# License
+MIT Licensed
 
 # CONTRIBUTORS WANTED!!
 Please contact me.
