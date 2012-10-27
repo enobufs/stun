@@ -39,3 +39,13 @@ MIT Licensed
 # CONTRIBUTORS WANTED!!
 Please contact me.
 
+***
+
+I want to contact you, but can't figure out how!!
+You can reach me at joe@sleepless.com
+Interested in how well your stun server worked
+
+j.h.
+
+***
+
