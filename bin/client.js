@@ -2,11 +2,22 @@
 'use strict';
 
 var Client = require('../index').Client;
-var STUN_SERVER_ADDR = "127.0.0.1";
+var serverAddr = "127.0.0.1";
+
+var program = require('commander');
+
+program
+.version(require('../package').version)
+.option('-s, --server [host]', 'STUN server address (e.g. 24.1.2.3')
+.parse(process.argv);
+
+if (program.server) {
+    serverAddr = program.server;
+}
+
 
 var client = new Client();
-client.setServerAddr(STUN_SERVER_ADDR);
-client.setLocalAddr('127.0.0.1');
+client.setServerAddr(serverAddr);
 client.start(function (result) {
     var mapped = client.getMappedAddr();
     console.log([
