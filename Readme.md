@@ -1,5 +1,7 @@
 # STUN server for Node.js
 
+## Disclaimer: This is just a fork of @enobufs / stun, all credits go to him. Some fixes for newer versions of Node (pushed) are included.
+
 ## Overview
 STUN (Simple Traversal of UDP through NAT: RFC3489) is a protocol that allows a client node to obtain an external IP address and port number assigned by a NAT the client is behind. It can also identify behavioral type of the NAT. It is implemented in JavaScript to run with node.js. I started this work originally to learn node.js and JavaScript, however, this library may help other people who are interested in using STUN.
 
