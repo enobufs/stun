@@ -11,11 +11,51 @@ the client is behind. It can also identify behavioral type of the NAT.
 
 ## Installation
 ```
-$ npm install node-stun
+$ npm install -g node-stun
 ```
 
-## How to run STUN server
-(TODO)
+## Usage
+### How to run STUN server
+Place a config file named as `node-stun.ini` in your current directory.
+The config file should look like following. (These local loopback addresses
+should be routable public IP addresses in the real settings, of course)
+
+```
+[primary]
+host = 127.0.0.1
+
+[secondary]
+host = 127.0.0.2
+```
+
+On Mac, you can add another loopback address by typing:
+
+```
+$ sudo ifconfig lo0 alias 127.0.0.2 up
+```
+
+The start STUN server:
+
+```
+$ node-stun-server
+```
+
+
+### How to run STUN client
+
+In another terminal, type:
+
+```
+$ node-stun-client -s 127.0.0.1
+```
+
+If successful, you should see the following on your console:
+```
+Complete(0): Open NB=I EF=I (Open to internet) mapped=127.0.0.1:61072 rtt=0
+```
+
+### API
+(TODO: Will finalize the API in the next release)
 
 
 # Limitations
@@ -55,7 +95,4 @@ $ npm install node-stun
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
   IN THE SOFTWARE.
 ```
-
-# CONTRIBUTORS WANTED!!
-Please contact me.
 
