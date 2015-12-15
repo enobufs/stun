@@ -8,7 +8,9 @@
     "node-stun-client": "./bin/client.js"
   },
   "scripts": {
-    "test": "_mocha"
+    "test": "_mocha",
+    "posttest": "eslint lib test bin",
+    "lint": "eslint lib test bin"
   },
   "repository": {
     "type": "git",
@@ -27,7 +29,7 @@
   },
   "homepage": "https://github.com/enobufs/stun",
   "devDependencies": {
-    "eslint": "^1.8.0",
+    "eslint": "^1.10.3",
     "istanbul": "^0.4.1",
     "mocha": "^2.2.5"
   },
@@ -36,5 +38,31 @@
     "debug": "^2.2.0",
     "ini": "^1.3.4",
     "lodash": "^3.10.1"
+  },
+  "eslintConfig": {
+    "rules": {
+      "callback-return": [2, ["callback", "cb", "next", "done"]],
+      "camelcase": [2, {"properties": "never"}],
+      "comma-spacing": [2, {"before": false, "after": true}],
+      "indent": [ 2, 4, { "SwitchCase": 1 } ],
+      "linebreak-style": [ 2, "unix" ],
+      "max-len": [1, 120, 4, { "ignoreComments": true, "ignoreUrls": true }],
+      "no-console": 0,
+      "no-extra-boolean-cast": [0],
+      "no-new": 2,
+      "no-spaced-func": [2],
+      "no-trailing-spaces": [2],
+      "no-unused-vars": [2, {"args": "all"}],
+      "no-use-before-define": [2, "nofunc"],
+      "semi": [ 2, "always" ],
+      "space-after-keywords": [ 2, "always" ],
+      "space-before-function-paren": [2, {"anonymous": "always", "named": "never"}],
+      "space-return-throw-case": 2
+    },
+    "env": {
+        "node": true,
+        "mocha": true
+    },
+    "extends": "eslint:recommended"
   }
 }
