@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-var Client = require('../index').Client;
+var stun = require('../index');
 var serverAddr = "127.0.0.1";
 
 var program = require('commander');
@@ -16,7 +16,7 @@ if (program.server) {
 }
 
 
-var client = new Client();
+var client = stun.createClient();
 client.setServerAddr(serverAddr);
 client.start(function (result) {
     var mapped = client.getMappedAddr();
