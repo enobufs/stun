@@ -1,6 +1,6 @@
 {
   "name": "node-stun",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "STUN (Session Traversal Unitilities for NAT) for Node.js",
   "main": "index.js",
   "bin": {
@@ -41,27 +41,89 @@
   },
   "eslintConfig": {
     "rules": {
-      "callback-return": [2, ["callback", "cb", "next", "done"]],
-      "camelcase": [2, {"properties": "never"}],
-      "comma-spacing": [2, {"before": false, "after": true}],
-      "indent": [ 2, 4, { "SwitchCase": 1 } ],
-      "linebreak-style": [ 2, "unix" ],
-      "max-len": [1, 120, 4, { "ignoreComments": true, "ignoreUrls": true }],
+      "callback-return": [
+        2,
+        [
+          "callback",
+          "cb",
+          "next",
+          "done"
+        ]
+      ],
+      "camelcase": [
+        2,
+        {
+          "properties": "never"
+        }
+      ],
+      "comma-spacing": [
+        2,
+        {
+          "before": false,
+          "after": true
+        }
+      ],
+      "indent": [
+        2,
+        4,
+        {
+          "SwitchCase": 1
+        }
+      ],
+      "linebreak-style": [
+        2,
+        "unix"
+      ],
+      "max-len": [
+        1,
+        120,
+        4,
+        {
+          "ignoreComments": true,
+          "ignoreUrls": true
+        }
+      ],
       "no-console": 0,
-      "no-extra-boolean-cast": [0],
+      "no-extra-boolean-cast": [
+        0
+      ],
       "no-new": 2,
-      "no-spaced-func": [2],
-      "no-trailing-spaces": [2],
-      "no-unused-vars": [2, {"args": "all"}],
-      "no-use-before-define": [2, "nofunc"],
-      "semi": [ 2, "always" ],
-      "space-after-keywords": [ 2, "always" ],
-      "space-before-function-paren": [2, {"anonymous": "always", "named": "never"}],
+      "no-spaced-func": [
+        2
+      ],
+      "no-trailing-spaces": [
+        2
+      ],
+      "no-unused-vars": [
+        2,
+        {
+          "args": "all"
+        }
+      ],
+      "no-use-before-define": [
+        2,
+        "nofunc"
+      ],
+      "semi": [
+        2,
+        "always"
+      ],
+      "space-after-keywords": [
+        2,
+        "always"
+      ],
+      "space-before-function-paren": [
+        2,
+        {
+          "anonymous": "always",
+          "named": "never"
+        }
+      ],
       "space-return-throw-case": 2
     },
     "env": {
-        "node": true,
-        "mocha": true
+      "node": true,
+      "mocha": true
     },
     "extends": "eslint:recommended"
   }
