@@ -1,5 +1,7 @@
 # STUN server for Node.js
 
+> Looking for older implementation? Go to [legacy](https://github.com/enobufs/stun/tree/legacy) branch.
+
 ## Overview
 STUN (Simple Traversal of UDP through NAT: RFC3489) is a protocol that allows a
 client node to obtain an external IP address and port number assigned by a NAT
