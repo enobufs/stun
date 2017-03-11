@@ -9,6 +9,7 @@ var program = require('commander');
 program
 .version(require('../package').version)
 .option('-s, --server [host]', 'STUN server address (e.g. 24.1.2.3')
+.option('-p, --port [port]', 'STUN server port', '3478')
 .parse(process.argv);
 
 if (program.server) {
@@ -17,7 +18,7 @@ if (program.server) {
 
 
 var client = stun.createClient();
-client.setServerAddr(serverAddr);
+client.setServerAddr(serverAddr, +program.port);
 client.start(function (result) {
     var mapped = client.getMappedAddr();
     console.log([
