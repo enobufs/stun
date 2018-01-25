@@ -64,7 +64,6 @@ Complete(0): Open NB=I EF=I (Open to internet) mapped=127.0.0.1:61072 rtt=0
 * Current implementation does not support RFC 5389
 * Following attributes are not supported
    * RESPONSE-ADDRESS
-   * CHANGED-ADDRESS
    * USERNAME
    * PASSWORD
    * MESSAGE-INTEGRITY
@@ -72,6 +71,22 @@ Complete(0): Open NB=I EF=I (Open to internet) mapped=127.0.0.1:61072 rtt=0
    * UNKNOWN-ATTRIBUTE
    * REFLECTED-FROM
    * XOR-MAPPED-ADDRESS (RFC3489bis)
+
+# Public STUN servers that work with this STUN client
+> Last tested on Jan 24, 2018
+
+* sip1.lakedestiny.cordiaip.com
+* stun.callwithus.com
+* stun.counterpath.net
+* stun.ideasip.com
+* stun.internetcalls.com
+* stun.sipgate.net
+* stun.stunprotocol.org
+* stun.voip.aebc.com
+* stun.voipbuster.com
+* stun.voxgratia.org
+* stun.xten.com
+
 
 # License
 
