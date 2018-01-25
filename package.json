@@ -1,6 +1,6 @@
 {
   "name": "node-stun",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "STUN (Session Traversal Unitilities for NAT) for Node.js",
   "main": "index.js",
   "bin": {
