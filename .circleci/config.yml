@@ -34,28 +34,17 @@ jobs:
   configure_aws_ec2:
     executor: aws-cli/default
     steps:
-      # - checkout
+      - checkout
       - aws-cli/install
       - aws-cli/setup
           # profile-name: example
       - run:
-          name: SSH into instance
+          # name: "SSH into instance"
           command: |
-            ssh -t ubuntu@ec2-54-88-131-100.compute-1.amazonaws.com <<-'ENDSSH'
-                  git clone -b circleci-project-setup https://github.com/seventhaveinc/stun.git
-                  cd stun
-                  npm install -g node-stun
-                  node-stun-server
-            ENDSSH
-     # get latest code from git
-     # cd to stun
-     # install stun
-
+           ls
+           sudo scripts/deploy.sh
+     
 workflows:
-  # Below is the definition of your workflow.
-  # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
-  # CircleCI will run this workflow on every commit.
-  # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
   stun:
     jobs:
       - build-and-test
