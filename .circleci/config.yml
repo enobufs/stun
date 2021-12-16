@@ -36,7 +36,7 @@ jobs:
     steps:
       # - checkout
       - aws-cli/install
-      - aws-cli/setup:
+      - aws-cli/setup
           # profile-name: example
       - run: echo "Run your code here"
      # get latest code from git
