@@ -31,12 +31,11 @@ jobs:
       #     name: Run tests
       #     command: npm test
 
-  configure_aws_ec2:
-    executor: aws-cli/default
+  configure_ec2_server:
+    machine: # executor type
+      image: ubuntu-2004:202010-01
     steps:
       - checkout
-      - aws-cli/install
-      - aws-cli/setup
       - add_ssh_keys:
           fingerprints:
             - 90:59:80:0a:f8:a8:c9:6e:cb:83:8f:8b:50:85:86:47
@@ -49,19 +48,19 @@ jobs:
       - run:
           name: Copy project to EC2 server
           command: |
-            scp stun.tar.gz ubuntu@3.80.156.185:/home/ubuntu
-            ssh ubuntu@3.80.156.185 tar -xvzf stun.tar.gz
+            scp -vvv stun.tar.gz ubuntu@ec2-3-80-156-185.compute-1.amazonaws.com:/home/ubuntu
+            ssh -vvv ubuntu@ec2-3-80-156-185.compute-1.amazonaws.com tar -xvzf stun.tar.gz
       - run:
           name: Copy project to EC2 server
           command: |
-            scp stun.tar.gz ubuntu@3.80.156.185:/home/ubuntu
-            ssh ubuntu@3.80.156.185 tar -xvzf stun.tar.gz
+            scp stun.tar.gz ubuntu@ec2-3-80-156-185.compute-1.amazonaws.com:/home/ubuntu
+            ssh ubuntu@ec2-3-80-156-185.compute-1.amazonaws.com tar -xvzf stun.tar.gz
 
       - run: 
           name: Install project
           command: |
-            ssh ubuntu@3.80.156.185 npm install -g node-stun
-            ssh ubuntu@3.80.156.185 node-stun-server
+            ssh ubuntu@ec2-3-80-156-185.compute-1.amazonaws.com npm install -g node-stun
+            ssh ubuntu@ec2-3-80-156-185.compute-1.amazonaws.com node-stun-server
      
 workflows:
   stun:
@@ -69,7 +68,7 @@ workflows:
       - build-and-test
       # For running simple node tests, you could optionally use the node/test job from the orb to replicate and replace the job above in fewer lines.
       # - node/test
-      - configure_aws_ec2:
+      - configure_ec2_server:
           requires: 
             - build-and-test
           filters:
