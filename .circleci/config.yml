@@ -47,10 +47,14 @@ jobs:
             touch stun.tar.gz
             tar --exclude=stun.tar.gz -zcvf stun.tar.gz .
       - run:
+          name: Clone test
+          command: |
+            ssh -v ubuntu@ec2-54-88-131-100.compute-1.amazonaws.com git clone https://github.com/seventhaveinc/infrastructure.git
+      - run:
           name: Copy project to EC2 server
           command: |
-            
-            ssh -v ubuntu@ec2-54-88-131-100.compute-1.amazonaws.com tar -xvzf stun.tar.gz
+            scp stun.tar.gz ubuntu@ec2-54-88-131-100.compute-1.amazonaws.com:/home/ubuntu
+            ssh ubuntu@ec2-54-88-131-100.compute-1.amazonaws.com tar -xvzf stun.tar.gz
 
       - run: 
           name: Install project
