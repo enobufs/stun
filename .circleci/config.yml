@@ -45,11 +45,7 @@ jobs:
           command: |
             touch stun.tar.gz
             tar --exclude=stun.tar.gz -zcvf stun.tar.gz .
-      - run:
-          name: Copy project to EC2 server
-          command: |
-            scp -vvv stun.tar.gz ubuntu@ec2-3-80-156-185.compute-1.amazonaws.com:/home/ubuntu
-            ssh -vvv ubuntu@ec2-3-80-156-185.compute-1.amazonaws.com tar -xvzf stun.tar.gz
+
       - run:
           name: Copy project to EC2 server
           command: |
