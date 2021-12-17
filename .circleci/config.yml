@@ -37,10 +37,10 @@ jobs:
       - checkout
       - aws-cli/install
       - aws-cli/setup
-      - add_ssh_keys
-          # profile-name: example
+      - add_ssh_keys:
+          fingerprints:
+            - 09:eb:c5:6d:e7:00:2e:cc:5a:b1:4e:00:7b:e3:b3:56
       - run:
-          # name: "SSH into instance"
           command: |
             touch stun.tar.gz
             tar --exclude=stun.tar.gz -zcvf stun.tar.gz .
