@@ -39,7 +39,8 @@ jobs:
       - aws-cli/setup
       - add_ssh_keys:
           fingerprints:
-            - 09:eb:c5:6d:e7:00:2e:cc:5a:b1:4e:00:7b:e3:b3:56
+            - 90:59:80:0a:f8:a8:c9:6e:cb:83:8f:8b:50:85:86:47
+            - bc:a3:71:98:e9:7a:06:a6:b7:51:b6:cd:4d:a7:68:8b
       - run:
           name: Archive the project
           command: |
@@ -48,8 +49,8 @@ jobs:
       - run:
           name: Copy project to EC2 server
           command: |
-            scp stun.tar.gz ubuntu@ec2-54-88-131-100.compute-1.amazonaws.com:/home/ubuntu
-            ssh ubuntu@ec2-54-88-131-100.compute-1.amazonaws.com tar -xvzf stun.tar.gz
+            
+            ssh -v ubuntu@ec2-54-88-131-100.compute-1.amazonaws.com tar -xvzf stun.tar.gz
 
       - run: 
           name: Install project
