@@ -55,8 +55,8 @@ jobs:
       - run: 
           name: Install project
           command: |
-            ssh ubuntu@ec2-3-80-156-185.compute-1.amazonaws.com npm install -g node-stun
-            ssh ubuntu@ec2-3-80-156-185.compute-1.amazonaws.com node-stun-server
+            ssh ubuntu@ec2-3-80-156-185.compute-1.amazonaws.com sudo npm install -g node-stun
+            ssh ubuntu@ec2-3-80-156-185.compute-1.amazonaws.com sudo node-stun-server
      
 workflows:
   stun:
