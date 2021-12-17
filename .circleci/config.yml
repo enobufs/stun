@@ -41,15 +41,20 @@ jobs:
           fingerprints:
             - 09:eb:c5:6d:e7:00:2e:cc:5a:b1:4e:00:7b:e3:b3:56
       - run:
+          name: Archive the project
           command: |
             touch stun.tar.gz
             tar --exclude=stun.tar.gz -zcvf stun.tar.gz .
-
+      - run:
+          name: Copy project to EC2 server
+          command: |
             scp stun.tar.gz ubuntu@ec2-54-88-131-100.compute-1.amazonaws.com:/home/ubuntu
             ssh ubuntu@ec2-54-88-131-100.compute-1.amazonaws.com tar -xvzf stun.tar.gz
 
+      - run: 
+          name: Install project
+          command: |
             ssh ubuntu@ec2-54-88-131-100.compute-1.amazonaws.com npm install -g node-stun
-
             ssh ubuntu@ec2-54-88-131-100.compute-1.amazonaws.com node-stun-server
      
 workflows:
